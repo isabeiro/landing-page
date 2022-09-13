@@ -1,0 +1,27 @@
+:root {
+  --color-primary: #FFFFFF;
+  --color-dark-grey: #707070;
+  --color-light-grey: #888888;
+  --color-lighter-grey: #00000029;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vh;
+}
+
+header {
+  height: 299px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url(../img/wave-haikei.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}/*# sourceMappingURL=style.css.map */
