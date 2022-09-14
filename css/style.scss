@@ -16,7 +16,6 @@
 }
 
 .container {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,14 +82,14 @@ header {
 .container {
    
     .formulario {
-        width: 1000px;
+        width: 900px;
         display: flex;
         align-content: space-between;
       
         .section-one {
             font-size: 12px;
-            width: 60%;
-            padding: 30px;
+            width: 65%;
+            padding: 30px 55px 30px 0;
 
             h2 {
                 font-size: 20px;
@@ -107,16 +106,16 @@ header {
             width: 35%;
             display: flex;
             flex-direction: column;
-            padding: 5px 0;
+            padding: 30px 0;
 
             label {
                 display: flex;
                 flex-direction: column;
-                padding: 5px;
-                font-size: 12px;
+                padding: 5px 0;
+                font-size: 11px;
 
                 input {
-                    padding: 5px;
+                    padding: 5px 0;
                     margin: 5px 0;
                     border: 1px solid var(--color-light-grey);
                 }
@@ -129,6 +128,11 @@ header {
                 
                 .checkbox {
                     border-radius: 50%;
+                    margin: 5px 5px 5px 0;
+                }
+
+                .masculino {
+                    padding-right: 50px;
                 }
             }
 
@@ -138,6 +142,8 @@ header {
                 color: var(--color-light-grey);
                 padding: 9px;
                 border-radius: 3px;
+                font-size: 14px;
+                margin-top: 12px;
             }
         }
     }
@@ -151,26 +157,179 @@ header {
 
     .productsList {
 
-        h3::before,
-        h3::after {
-            display: block;
-            content: '';
-            width: 40%;
-            height: 2px;
-            background-color: var(--color-light-grey);
-            margin: 20px 5px; 
-        }
-        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-        h3 {
+        .title {
+
+            width: 100%;
+
+            h3::before,
+            h3::after {
+                display: block;
+                content: '';
+                width: 40%;
+                height: 2px;
+                background-color: var(--color-light-grey);
+                margin: 20px 5px; 
+            }
+            
+    
+            h3 {
+                display: flex;
+                align-items: center;
+                font-size: 15px;
+                padding: 5px 0;
+            }
+
+        }
+
+
+        .productsDescription {
             display: flex;
             align-items: center;
-            font-size: 15px;
-            width: 100vh;
-            padding: 5px;
+            justify-content: space-between;
+            width: 900px;
+            font-size: 12px;
+
+            .product {
+                width: 200px;
+
+                .img {
+                    border: 1px solid var(--color-light-grey);
+                    height: 150px;
+                    width: 200px;
+                }
+
+                .description {
+                    display: flex;
+                    flex-direction: column;
+
+                    .nomeDoProduto {
+                        padding: 12px 0;
+                        font-size: 14px;
+                    }
+
+                    p {
+                        font-size: 11px;
+                    }
+
+                    .prevPrice {
+                        padding: 8px 0px;
+                        font-size: 11px;
+                    }
+
+                    .price {
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+
+                    .opPrice {
+                        padding: 8px 0px;
+                        font-size: 11px;
+                    }
+
+                    button {
+                        background-color: var(--color-primary);
+                        color: var(--color-light-grey);
+                        border: 1px solid var(--color-light-grey);
+                        border-radius: 4px;
+                        font-size: 16px;
+                        padding: 5px 0;
+                    }
+
+                }
+            }
         }
 
+        .moreButton {
+            background-color: var(--primary-color);
+            color: var(--color-light-grey);
+            font-size: 14px;
+            padding: 7px 25px;
+            margin: 45px;
+            border: 1px solid var(--color-light-grey);
+            border-radius: 4px;
+        }
+    }
+}
 
+/************************
+         SHARE            
+************************/
+
+.container {
+    .share {
+        width: 900px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 70px;
+        
+        .title {
+            width: 100%;
+
+            h4::before,
+            h4::after {
+                display: block;
+                content: '';
+                width: 39%;
+                height: 2px;
+                background-color: var(--color-light-grey);
+                margin: 20px 5px; 
+            }
+            
+    
+            h4 {
+                display: flex;
+                align-items: center;
+                font-size: 15px;
+                padding: 25px 0 30px 0;
+            }
+
+            span {
+                font-size: 12px;
+                display: flex;
+                justify-content: center;
+            }
+
+        }
+
+        .shareForm {
+            padding: 30px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            form {
+            display: flex;
+            justify-content: center;
+
+                label {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 11px;
+                    width: 40%;
+                    padding-right: 30px;
+
+                    input {
+                        margin-top: 10px;
+                        padding: 5px;
+                    }
+                }
+            }
+        }
+
+        button {
+            background-color: var(--color-primary);
+            color: var(--color-light-grey);
+            border: 1px solid var(--color-light-grey);
+            border-radius: 4px;
+            font-size: 14px;
+            padding: 8px 80px;
+        }
     }
 }
 
@@ -191,8 +350,14 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: end;
         color: var(--color-primary);
-        font-size: 12px;
+        font-size: 11px;
+        padding-top: 40px;
+
+        p {
+            padding: 5px;
+        }
     }
 }
 

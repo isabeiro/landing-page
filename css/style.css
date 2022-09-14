@@ -14,7 +14,6 @@
 }
 
 .container {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,14 +68,14 @@ header .buttons button {
       FORM ALGORITHM            
 ************************/
 .container .formulario {
-  width: 1000px;
+  width: 900px;
   display: flex;
   align-content: space-between;
 }
 .container .formulario .section-one {
   font-size: 12px;
-  width: 60%;
-  padding: 30px;
+  width: 65%;
+  padding: 30px 55px 30px 0;
 }
 .container .formulario .section-one h2 {
   font-size: 20px;
@@ -90,16 +89,16 @@ header .buttons button {
   width: 35%;
   display: flex;
   flex-direction: column;
-  padding: 5px 0;
+  padding: 30px 0;
 }
 .container .formulario .subForm label {
   display: flex;
   flex-direction: column;
-  padding: 5px;
-  font-size: 12px;
+  padding: 5px 0;
+  font-size: 11px;
 }
 .container .formulario .subForm label input {
-  padding: 5px;
+  padding: 5px 0;
   margin: 5px 0;
   border: 1px solid var(--color-light-grey);
 }
@@ -110,6 +109,10 @@ header .buttons button {
 }
 .container .formulario .subForm .labelSex .checkbox {
   border-radius: 50%;
+  margin: 5px 5px 5px 0;
+}
+.container .formulario .subForm .labelSex .masculino {
+  padding-right: 50px;
 }
 .container .formulario .subForm .submit {
   background-color: var(--color-primary);
@@ -117,13 +120,23 @@ header .buttons button {
   color: var(--color-light-grey);
   padding: 9px;
   border-radius: 3px;
+  font-size: 14px;
+  margin-top: 12px;
 }
 
 /************************
       PRODUCT LIST            
 ************************/
-.container .productsList h3::before,
-.container .productsList h3::after {
+.container .productsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .productsList .title {
+  width: 100%;
+}
+.container .productsList .title h3::before,
+.container .productsList .title h3::after {
   display: block;
   content: "";
   width: 40%;
@@ -131,12 +144,130 @@ header .buttons button {
   background-color: var(--color-light-grey);
   margin: 20px 5px;
 }
-.container .productsList h3 {
+.container .productsList .title h3 {
   display: flex;
   align-items: center;
   font-size: 15px;
-  width: 100vh;
+  padding: 5px 0;
+}
+.container .productsList .productsDescription {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 900px;
+  font-size: 12px;
+}
+.container .productsList .productsDescription .product {
+  width: 200px;
+}
+.container .productsList .productsDescription .product .img {
+  border: 1px solid var(--color-light-grey);
+  height: 150px;
+  width: 200px;
+}
+.container .productsList .productsDescription .product .description {
+  display: flex;
+  flex-direction: column;
+}
+.container .productsList .productsDescription .product .description .nomeDoProduto {
+  padding: 12px 0;
+  font-size: 14px;
+}
+.container .productsList .productsDescription .product .description p {
+  font-size: 11px;
+}
+.container .productsList .productsDescription .product .description .prevPrice {
+  padding: 8px 0px;
+  font-size: 11px;
+}
+.container .productsList .productsDescription .product .description .price {
+  font-size: 16px;
+  font-weight: bold;
+}
+.container .productsList .productsDescription .product .description .opPrice {
+  padding: 8px 0px;
+  font-size: 11px;
+}
+.container .productsList .productsDescription .product .description button {
+  background-color: var(--color-primary);
+  color: var(--color-light-grey);
+  border: 1px solid var(--color-light-grey);
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 5px 0;
+}
+.container .productsList .moreButton {
+  background-color: var(--primary-color);
+  color: var(--color-light-grey);
+  font-size: 14px;
+  padding: 7px 25px;
+  margin: 45px;
+  border: 1px solid var(--color-light-grey);
+  border-radius: 4px;
+}
+
+/************************
+         SHARE            
+************************/
+.container .share {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 70px;
+}
+.container .share .title {
+  width: 100%;
+}
+.container .share .title h4::before,
+.container .share .title h4::after {
+  display: block;
+  content: "";
+  width: 39%;
+  height: 2px;
+  background-color: var(--color-light-grey);
+  margin: 20px 5px;
+}
+.container .share .title h4 {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  padding: 25px 0 30px 0;
+}
+.container .share .title span {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+}
+.container .share .shareForm {
+  padding: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .share .shareForm form {
+  display: flex;
+  justify-content: center;
+}
+.container .share .shareForm form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
+  width: 40%;
+  padding-right: 30px;
+}
+.container .share .shareForm form label input {
+  margin-top: 10px;
   padding: 5px;
+}
+.container .share button {
+  background-color: var(--color-primary);
+  color: var(--color-light-grey);
+  border: 1px solid var(--color-light-grey);
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 8px 80px;
 }
 
 /************************
@@ -156,6 +287,11 @@ header .buttons button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: end;
   color: var(--color-primary);
-  font-size: 12px;
+  font-size: 11px;
+  padding-top: 40px;
+}
+.credit span p {
+  padding: 5px;
 }/*# sourceMappingURL=style.css.map */
