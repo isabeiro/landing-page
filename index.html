@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="style/style.css">
     </head>
     
     <body>
@@ -37,21 +37,21 @@
                 </div>
                 
                 
-                <form action="GET" class="subForm">
+                <form action="GET" class="subForm" id="subForm">
 
                     <label>
                         Seu nome:
-                        <input type="text" name="name">
+                        <input type="text" name="name" id="name">
                     </label>
     
                     <label>
                         E-mail:
-                        <input type="text" name="email">
+                        <input type="text" name="email" id="email">
                     </label>
     
                     <label>
                         CPF:
-                        <input type="text" name="cpf">
+                        <input type="text" name="cpf" id="cpf">
                     </label>
                     
                     <label class="labelSex">
@@ -62,14 +62,12 @@
                         <label>Feminino</label>
                     </label>
     
-                    <input type="submit" class="submit">
+                    <input type="submit" class="submit" id="submit">
 
                 </form>
                 
 
             </section>
-
-        
 
 
             <section class="productsList">
@@ -78,93 +76,13 @@
                     <h3>  Sua seleção especial  </h3>
                 </div>
         
-                <div class="productsDescription">
-                    <div class="product">
-                        <div class="img"></div>
-                        <div class="description">
-                            <span class="nomeDoProduto">
-                                Nome do produto
-                            </span>
-                            <p>Descrição do produto um pouco maior, com duas linhas ou três que explica melhor do que se trata.</p>
-                            <span class="prevPrice">
-                                De: R$23,99
-                            </span>
-                            <span class="price">
-                                Por: R$19,99
-                            </span>
-                            <span class="opPrice">
-                                ou 2x de R$9,99
-                            </span>
-                            <button>Comprar</button>
-                        </div>
-                    </div>
-
-                    <div class="product">
-                        <div class="img"></div>
-                        <div class="description">
-                            <span class="nomeDoProduto">
-                                Nome do produto
-                            </span>
-                            <p>Descrição do produto um pouco maior, com duas linhas ou três que explica melhor do que se trata.</p>
-                            <span class="prevPrice">
-                                De: R$23,99
-                            </span>
-                            <span class="price">
-                                Por: R$19,99
-                            </span>
-                            <span class="opPrice">
-                                ou 2x de R$9,99
-                            </span>
-                            <button>Comprar</button>
-                        </div>
-                    </div>
-
-                    <div class="product">
-                        <div class="img"></div>
-                        <div class="description">
-                            <span class="nomeDoProduto">
-                                Nome do produto
-                            </span>
-                            <p>Descrição do produto um pouco maior, com duas linhas ou três que explica melhor do que se trata.</p>
-                            <span class="prevPrice">
-                                De: R$23,99
-                            </span>
-                            <span class="price">
-                                Por: R$19,99
-                            </span>
-                            <span class="opPrice">
-                                ou 2x de R$9,99
-                            </span>
-                            <button>Comprar</button>
-                        </div>
-                    </div>
-
-                    <div class="product">
-                        <div class="img"></div>
-                        <div class="description">
-                            <span class="nomeDoProduto">
-                                Nome do produto
-                            </span>
-                            <p>Descrição do produto um pouco maior, com duas linhas ou três que explica melhor do que se trata.</p>
-                            <span class="prevPrice">
-                                De: R$23,99
-                            </span>
-                            <span class="price">
-                                Por: R$19,99
-                            </span>
-                            <span class="opPrice">
-                                ou 2x de R$9,99
-                            </span>
-                            <button>Comprar</button>
-                        </div>
-                    </div>
+                <div class="productsDescription" id="productsDescription">
+                    
                 </div>
         
-                <button class="moreButton">Ainda mais produtos aqui!</button>
+                <button class="moreButton" id="moreButton">Ainda mais produtos aqui!</button>
         
             </section>
-
-
 
 
             <section class="share">
@@ -204,5 +122,7 @@
             </span>
         </footer>
 
+        <script src="script/main.js"></script>
     </body>
+
 </html>

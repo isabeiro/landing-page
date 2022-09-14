@@ -154,11 +154,13 @@ header .buttons button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 900px;
   font-size: 12px;
 }
 .container .productsList .productsDescription .product {
   width: 200px;
+  padding-top: 35px;
 }
 .container .productsList .productsDescription .product .img {
   border: 1px solid var(--color-light-grey);
