@@ -10,7 +10,6 @@ function turnInJson(response) {
 }
 
 function productList(response) {
-    console.log(response)
 
     response.products.forEach(product => {
 
@@ -80,9 +79,116 @@ const subForm = document.querySelector("#subForm")
 const name = document.querySelector("#name")
 const email = document.querySelector("#email")
 const cpf = document.querySelector("#cpf")
+const submit = document.querySelector("#submit")
+const checkboxM = document.querySelector("#checkboxM")
+const checkboxF = document.querySelector("#checkboxF")
 
-subForm.onsubmit = function(evento) {
+
+let temErro = false
+
+checkboxM.addEventListener("click", function() {
+    if (checkboxM.classList.contains('checked')) {
+        checkboxM.classList.remove('checked')
+
+    } else {
+        checkboxF.classList.remove('checked')
+        checkboxM.classList.add('checked')
+        temErro = false
+    }
+})
+
+checkboxF.addEventListener("click", function() {
+    if (checkboxF.classList.contains('checked')) {
+        checkboxF.classList.remove('checked')
+
+
+    } else {
+        checkboxM.classList.remove('checked')
+        checkboxF.classList.add('checked')
+        temErro = false
+    }
+})
+
+
+subForm.onsubmit = function(event) {
     
-    evento.preventDefault() 
+    event.preventDefault() 
 
+    if(!subForm.name.value){   
+        temErro = true
+        subForm.name.classList.add('inputError')
+        subForm.name.placeholder= ' Digite o nome'
+    } else {
+        subForm.name.classList.remove('inputError')
+        subForm.name.placeholder= ''
+    }
+
+    if(!subForm.email.value){   
+        temErro = true
+        subForm.email.classList.add('inputError')
+        subForm.email.placeholder= ' Digite o e-mail'
+    } else {
+        subForm.email.classList.remove('inputError')
+        subForm.email.placeholder= ''
+    }
+
+    if(!subForm.cpf.value){   
+        temErro = true
+        subForm.cpf.classList.add('inputError')
+        subForm.cpf.placeholder= ' Digite o CPF'
+    } else {
+        subForm.cpf.classList.remove('inputError')
+        subForm.cpf.placeholder= ''
+    }
+
+    
+    if (!temErro){
+        subForm.classList.add('thankyou')
+
+        subForm.innerHTML = `
+        Obrigado por se inscrever!
+        `
+        
+    }
 }
+
+/*********************
+ *    FORM SHARE
+ ********************/
+
+const shareForm = document.querySelector("#shareForm")
+const friendName = document.querySelector("#friendName")
+const friendEmail = document.querySelector("#friendEmail")
+
+shareForm.onsubmit = (event) => {
+
+    event.preventDefault()
+
+    if (!shareForm.friendName.value) {
+        temErro = true
+        shareForm.friendName.classList.add('inputError')
+        shareForm.friendName.placeholder = ' Digite o nome'
+    } else {
+        shareForm.friendName.classList.remove('inputError')
+        shareForm.friendName.placeholder = ''
+    }
+
+    if (!shareForm.friendEmail.value) {
+        temErro = true
+        shareForm.friendEmail.classList.add('inputError')
+        shareForm.friendEmail.placeholder = ' Digite o e-mail'
+    } else {
+        shareForm.friendEmail.classList.remove('inputError')
+        shareForm.friendEmail.placeholder = ''
+    }
+
+
+    if (!temErro) {
+        shareForm.classList.add('thankyou')
+
+        shareForm.innerHTML = `
+        Obrigado por compartilhar!
+        `
+    }
+}
+

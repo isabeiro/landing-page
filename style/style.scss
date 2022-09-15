@@ -108,6 +108,13 @@ header {
             flex-direction: column;
             padding: 30px 0;
 
+            .inputError {
+                border: 2px solid rgb(192, 64, 64);
+                font-style:italic;
+                font-weight: bold;
+            }
+
+
             label {
                 display: flex;
                 flex-direction: column;
@@ -119,16 +126,47 @@ header {
                     margin: 5px 0;
                     border: 1px solid var(--color-light-grey);
                 }
+
+                input[type="number"]::-webkit-outer-spin-button,
+                input[type="number"]::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
             }
 
-            .labelSex {
+            .labelGender {
                 display: flex;
                 flex-direction: row;
                 border-radius: 50%;
                 
                 .checkbox {
+                    border: 1px solid var(--color-light-grey);
                     border-radius: 50%;
-                    margin: 5px 5px 5px 0;
+                    width: 13px;
+                    height: 13px;
+                    margin-right: 5px;
+                    margin-top: 5px;
+                    cursor: pointer;
+                }
+
+                .checked {
+                    position: relative;
+                }
+
+                .checked::after {
+                    position: absolute;
+                    top: 1.4px;
+                    left: 1.4px;
+                    display: block;
+                    content: '';
+                    width: 9px;
+                    height: 9px;
+                    border-radius: 50%;
+                    background-color: var(--color-dark-grey);
+                }
+
+                .erroCheckbox {
+                    border: 1px solid red;
                 }
 
                 .masculino {
@@ -145,6 +183,12 @@ header {
                 font-size: 14px;
                 margin-top: 12px;
             }
+        }
+
+        .thankyou {
+            display: flex;
+            align-items: center;
+            justify-content: center;                
         }
     }
 
@@ -298,39 +342,47 @@ header {
 
         }
 
-        .shareForm {
+        form {
             padding: 30px;
             width: 100%;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            flex-direction: row;
+            justify-content: space-around;
 
-            form {
-            display: flex;
-            justify-content: center;
+            .inputError {
+                border: 2px solid rgb(192, 64, 64);
+                font-style:italic;
+                font-weight: bold;
+            }
 
-                label {
-                    display: flex;
-                    flex-direction: column;
-                    font-size: 11px;
-                    width: 40%;
-                    padding-right: 30px;
+            label {
+                display: flex;
+                flex-direction: column;
+                font-size: 11px;
+                width: 40%;
+                padding-right: 30px;
 
-                    input {
-                        margin-top: 10px;
-                        padding: 5px;
-                    }
+                input {
+                    margin-top: 10px;
+                    padding: 5px;
                 }
             }
         }
+        
 
-        button {
+        .submit {
             background-color: var(--color-primary);
             color: var(--color-light-grey);
             border: 1px solid var(--color-light-grey);
             border-radius: 4px;
             font-size: 14px;
             padding: 8px 80px;
+        }
+
+        .thankyou {
+            display: flex;
+            align-items: center;
+            justify-content: center;                
         }
     }
 }

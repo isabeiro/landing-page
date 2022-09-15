@@ -51,19 +51,20 @@
     
                     <label>
                         CPF:
-                        <input type="text" name="cpf" id="cpf">
+                        <input type="number" name="cpf" id="cpf">
                     </label>
                     
-                    <label class="labelSex">
-                        <input type="radio" class="checkbox">
+                    <label class="labelGender">
+                        <div class="checkbox" id="checkboxM"></div>
                         <label class="masculino">Masculino</label>
                     
-                        <input type="radio" class="checkbox">
+                        <div class="checkbox" id="checkboxF"></div>
                         <label>Feminino</label>
                     </label>
     
                     <input type="submit" class="submit" id="submit">
 
+                    
                 </form>
                 
 
@@ -94,21 +95,19 @@
                     </span>
                 </div>
         
-                <div class="shareForm">
-                    <form action="">
-                        <label>
-                            Nome do seu amigo:
-                            <input type="text">
-                        </label>
+                <form action="GET" class="shareForm" id="shareForm">
+                    <label>
+                        Nome do seu amigo:
+                        <input type="text" id="friendName">
+                    </label>
+    
+                    <label>
+                        E-mail:
+                        <input type="text" id="friendEmail">
+                    </label>
+                </form>
         
-                        <label>
-                            E-mail:
-                            <input type="text">
-                        </label>
-                    </form>
-                </div>
-        
-                <button>Enviar agora</button>
+                <input type="submit" class="submit" id="submit">
         
             </section>
             
