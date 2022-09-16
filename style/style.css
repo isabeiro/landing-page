@@ -1,9 +1,9 @@
+@charset "UTF-8";
 :root {
   --color-primary: #FFFFFF;
   --color-dark-grey: #707070;
   --color-light-grey: #888888;
-  --color-lighter-grey: #00000029;
-  @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Roboto:wght@400;700&display=swap");
+  --color-dark: #00000029;
 }
 
 * {
@@ -29,9 +29,9 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: var(--color-dark-grey);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 71%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 71%);
+  background-color: var(--color-dark-grey);
   color: var(--color-primary);
   font-weight: bold;
   letter-spacing: 0px;
@@ -59,7 +59,7 @@ header .buttons button {
   padding: 10px 30px;
   border: 0;
   border-radius: 3px;
-  box-shadow: 2px 2px var(--color-dark-grey);
+  box-shadow: 2px 2px 5px var(--color-dark);
   color: var(--color-light-grey);
   background-color: var(--color-primary);
 }
@@ -345,4 +345,98 @@ header .buttons button {
 }
 .credit span p {
   padding: 5px;
+}
+
+/************************
+RESPONSIVO-MÁX 420PX      
+************************/
+@media (max-width: 420px) {
+  * body {
+    width: 420px;
+  }
+  .header {
+    position: relative;
+    align-items: flex-start;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .header .secondSentence {
+    padding: 10px 0 35px 0;
+  }
+  .header .buttons {
+    position: absolute;
+    top: 200px;
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-right: 12px;
+  }
+  .header .buttons button {
+    width: 170px;
+    margin: 10px;
+    border: 1px solid var(--color-dark-grey);
+  }
+  .container .formulario {
+    flex-direction: column;
+    width: 90%;
+  }
+  .container .formulario .section-one {
+    width: 100%;
+    padding: 45px 0;
+  }
+  .container .formulario .subForm {
+    width: 100%;
+  }
+  .container .productsList {
+    width: 420px;
+  }
+  .container .productsList .title h3::before,
+.container .productsList .title h3::after {
+    width: 29%;
+  }
+  .container .productsList .productsDescription {
+    width: auto;
+  }
+  .container .productsList .productsDescription .product {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+  }
+  .container .productsList .productsDescription .product .img {
+    margin: 0 12px;
+  }
+  .container .productsList .productsDescription .product .description {
+    height: 150px;
+    justify-content: space-between;
+  }
+  .container .productsList .productsDescription .product .description .nomeDoProduto {
+    padding-top: 0;
+  }
+  .container .productsList .productsDescription .product .description p {
+    display: none;
+  }
+  .container .productsList .productsDescription .product .description button {
+    width: 180px;
+  }
+  .container .share {
+    width: 100%;
+  }
+  .container .share .title span {
+    padding: 0 12px;
+    text-align: center;
+  }
+  .container .share form {
+    width: 100%;
+    padding: 20px 12px;
+  }
+  .container .share form .labelShare {
+    flex-direction: column;
+  }
+  .container .share form .labelShare label {
+    width: auto;
+    padding: 0;
+  }
+  .container .share form .labelShare label input {
+    margin: 10px 0 15px 0;
+  }
 }/*# sourceMappingURL=style.css.map */

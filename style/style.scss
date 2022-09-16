@@ -3,9 +3,7 @@
     --color-primary: #FFFFFF;
     --color-dark-grey: #707070;
     --color-light-grey: #888888;
-    --color-lighter-grey: #00000029;
-
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Roboto:wght@400;700&display=swap');
+    --color-dark: #00000029;
 }
 
 * {
@@ -33,14 +31,12 @@ header {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: var(--color-dark-grey);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 71%);
+    background-color: var(--color-dark-grey);
     color: var(--color-primary);
     font-weight: bold;
     letter-spacing: 0px;
     padding-top: 50px;
-
-
 
     .firstSentence {
         font-weight: 100;
@@ -67,7 +63,7 @@ header {
             padding: 10px 30px;
             border: 0;
             border-radius: 3px;
-            box-shadow: 2px 2px var(--color-dark-grey);
+            box-shadow: 2px 2px 5px var(--color-dark);
             color: var(--color-light-grey);
             background-color: var(--color-primary);
         }
@@ -206,7 +202,6 @@ header {
         align-items: center;
 
         .title {
-
             width: 100%;
 
             h3::before,
@@ -218,7 +213,6 @@ header {
                 background-color: var(--color-light-grey);
                 margin: 20px 5px; 
             }
-            
     
             h3 {
                 display: flex;
@@ -226,9 +220,7 @@ header {
                 font-size: 15px;
                 padding: 5px 0;
             }
-
         }
-
 
         .productsDescription {
             display: flex;
@@ -324,7 +316,6 @@ header {
                 background-color: var(--color-light-grey);
                 margin: 20px 5px; 
             }
-            
     
             h4 {
                 display: flex;
@@ -338,7 +329,6 @@ header {
                 display: flex;
                 justify-content: center;
             }
-
         }
 
         form {
@@ -357,9 +347,7 @@ header {
                 border-radius: 4px;
                 font-size: 14px;
                 padding: 8px 80px;
-            
             }
-
             
             .labelShare {
                 display: flex;
@@ -384,9 +372,7 @@ header {
                         padding: 5px;
                     }
                 }
-
             }
-
         }
         
 
@@ -426,7 +412,132 @@ header {
     }
 }
 
+/************************
+RESPONSIVO-MÁX 420PX      
+************************/
 
+@media (max-width: 420px) {
 
+    * {
+        body {
+            width: 420px;  
+        } 
+    }
+    
+    .header {
+        position: relative;
+        align-items: flex-start;
+        padding-left: 12px;
+        padding-right: 12px;
 
+        .secondSentence {
+            padding: 10px 0 35px 0;
+        }
+
+        .buttons {
+            position: absolute;
+            top: 200px;
+            width: auto;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding-right: 12px;
+
+            button {
+                width: 170px;
+                margin: 10px;
+                border: 1px solid var(--color-dark-grey);
+
+            }
+        }
+    }
+
+    .container {
+
+        .formulario {
+            flex-direction: column;
+            width: 90%;
+
+            .section-one {
+                width: 100%;
+                padding: 45px 0;
+            }
+
+            .subForm {
+                width: 100%;
+            }
+        }
+
+        .productsList {
+            width: 420px;
+
+            .title {
+
+                h3::before,
+                h3::after {
+                    width: 29%;
+                }
+            }
+
+            .productsDescription {
+                width: auto;
+
+                .product {
+                    display: flex;
+                    flex-direction: row;
+                    width: auto;
+
+                    .img {
+                        margin: 0 12px;
+                    }
+
+                    .description {
+                        height: 150px;
+                        justify-content: space-between;
+
+                        .nomeDoProduto {
+                            padding-top: 0;
+                        }
+
+                        p {
+                            display: none;
+                        }
+
+                        button {
+                            width: 180px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .share {
+            width: 100%;
+
+            .title {
+                span {
+                    padding: 0 12px;
+                    text-align: center;
+                }
+            }
+
+            form {
+                width: 100%;
+                padding: 20px 12px;
+
+                .labelShare {
+                    flex-direction: column;
+                    
+                    label {
+                        width: auto;
+                        padding: 0;
+
+                        input {
+                            margin: 10px 0 15px 0; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 // font-family: 'Roboto', sans-serif;
