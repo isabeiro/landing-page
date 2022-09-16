@@ -311,7 +311,6 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-bottom: 70px;
         
         .title {
             width: 100%;
@@ -346,38 +345,50 @@ header {
             padding: 30px;
             width: 100%;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: space-around;
 
-            .inputError {
-                border: 2px solid rgb(192, 64, 64);
-                font-style:italic;
-                font-weight: bold;
+            .submit {
+                align-self: center;
+                margin: 40px;
+                background-color: var(--color-primary);
+                color: var(--color-light-grey);
+                border: 1px solid var(--color-light-grey);
+                border-radius: 4px;
+                font-size: 14px;
+                padding: 8px 80px;
+            
             }
 
-            label {
+            
+            .labelShare {
                 display: flex;
-                flex-direction: column;
-                font-size: 11px;
-                width: 40%;
-                padding-right: 30px;
+                flex-direction: row;
+                justify-content: center;
 
-                input {
-                    margin-top: 10px;
-                    padding: 5px;
+                .inputError {
+                    border: 2px solid rgb(192, 64, 64);
+                    font-style:italic;
+                    font-weight: bold;
                 }
+    
+                label {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 11px;
+                    width: 40%;
+                    padding-right: 30px;
+    
+                    input {
+                        margin-top: 10px;
+                        padding: 5px;
+                    }
+                }
+
             }
+
         }
         
-
-        .submit {
-            background-color: var(--color-primary);
-            color: var(--color-light-grey);
-            border: 1px solid var(--color-light-grey);
-            border-radius: 4px;
-            font-size: 14px;
-            padding: 8px 80px;
-        }
 
         .thankyou {
             display: flex;

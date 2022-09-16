@@ -1,4 +1,9 @@
 
+/*********************
+ * PRODUCTS LIST
+ ********************/
+
+
 const list = document.querySelector("#productsDescription")
 const buttonProduct = document.querySelector("#moreButton")
 
@@ -79,7 +84,7 @@ const subForm = document.querySelector("#subForm")
 const name = document.querySelector("#name")
 const email = document.querySelector("#email")
 const cpf = document.querySelector("#cpf")
-const submit = document.querySelector("#submit")
+let submit = document.querySelector("#submit")
 const checkboxM = document.querySelector("#checkboxM")
 const checkboxF = document.querySelector("#checkboxF")
 
@@ -159,36 +164,49 @@ subForm.onsubmit = function(event) {
 const shareForm = document.querySelector("#shareForm")
 const friendName = document.querySelector("#friendName")
 const friendEmail = document.querySelector("#friendEmail")
+const secSubmit = document.querySelector("#secondSubmit")
 
-shareForm.onsubmit = (event) => {
 
-    event.preventDefault()
+secondSubmit.addEventListener("click", function() {
 
-    if (!shareForm.friendName.value) {
-        temErro = true
-        shareForm.friendName.classList.add('inputError')
-        shareForm.friendName.placeholder = ' Digite o nome'
-    } else {
-        shareForm.friendName.classList.remove('inputError')
-        shareForm.friendName.placeholder = ''
+    shareForm.onsubmit = function(e) {
+        console.log('ok')
+
+    
+        e.preventDefault()
+
+        let temErro = false
+        
+    
+    
+        if (!shareForm.friendName.value) {
+            temErro = true
+            shareForm.friendName.classList.add('inputError')
+            shareForm.friendName.placeholder = ' Digite o nome'
+        } else {
+            shareForm.friendName.classList.remove('inputError')
+            shareForm.friendName.placeholder = ''
+        }
+    
+        if (!shareForm.friendEmail.value) {
+            temErro = true
+            shareForm.friendEmail.classList.add('inputError')
+            shareForm.friendEmail.placeholder = ' Digite o e-mail'
+        } else {
+            shareForm.friendEmail.classList.remove('inputError')
+            shareForm.friendEmail.placeholder = ''
+        }
+    
+    
+        if (!temErro) {
+            shareForm.classList.add('thankyou')
+    
+            shareForm.innerHTML = `
+            Obrigado por compartilhar!
+            `
+        }
     }
 
-    if (!shareForm.friendEmail.value) {
-        temErro = true
-        shareForm.friendEmail.classList.add('inputError')
-        shareForm.friendEmail.placeholder = ' Digite o e-mail'
-    } else {
-        shareForm.friendEmail.classList.remove('inputError')
-        shareForm.friendEmail.placeholder = ''
-    }
+})
 
-
-    if (!temErro) {
-        shareForm.classList.add('thankyou')
-
-        shareForm.innerHTML = `
-        Obrigado por compartilhar!
-        `
-    }
-}
 
