@@ -39,16 +39,20 @@ function productList(response) {
                     <span class="opPrice">
                         ou ${product.installments.count}x de R$${product.installments.value}
                     </span>
-                    <button>Comprar</button>
                 </div>
             </div>
         `;
         
     })
     
+    
+
     const nextPage = response.nextPage
     
     buttonProduct.addEventListener("click", function() {
+
+        buttonProduct.classList.add("removeButton")
+        buttonProduct.classList.remove("moreButton")
         
         fetch(`https://${nextPage}`)
         .then(turnInJson)
@@ -60,8 +64,10 @@ function productList(response) {
     return products;
 }
 
+
 function putItOnScreen() {
     list.innerHTML = products
+
 }
 
 function exibirErro() {
@@ -84,9 +90,10 @@ const subForm = document.querySelector("#subForm")
 const name = document.querySelector("#name")
 const email = document.querySelector("#email")
 const cpf = document.querySelector("#cpf")
-let submit = document.querySelector("#submit")
 const checkboxM = document.querySelector("#checkboxM")
 const checkboxF = document.querySelector("#checkboxF")
+let submit = document.querySelector("#submit")
+
 
 
 let temErro = false
@@ -122,7 +129,7 @@ subForm.onsubmit = function(event) {
     if(!subForm.name.value){   
         temErro = true
         subForm.name.classList.add('inputError')
-        subForm.name.placeholder= ' Digite o nome'
+        subForm.name.placeholder= ' Digite o nome corretamente'
     } else {
         subForm.name.classList.remove('inputError')
         subForm.name.placeholder= ''
@@ -131,16 +138,17 @@ subForm.onsubmit = function(event) {
     if(!subForm.email.value){   
         temErro = true
         subForm.email.classList.add('inputError')
-        subForm.email.placeholder= ' Digite o e-mail'
+        subForm.email.placeholder= ' Digite o e-mail corretamente'
+        
     } else {
         subForm.email.classList.remove('inputError')
         subForm.email.placeholder= ''
     }
 
-    if(!subForm.cpf.value){   
+    if(subForm.cpf.value.length != 11 && !subForm.cpf.value){   
         temErro = true
         subForm.cpf.classList.add('inputError')
-        subForm.cpf.placeholder= ' Digite o CPF'
+        subForm.cpf.placeholder= ' Digite o CPF corretamente'
     } else {
         subForm.cpf.classList.remove('inputError')
         subForm.cpf.placeholder= ''
@@ -153,8 +161,12 @@ subForm.onsubmit = function(event) {
         subForm.innerHTML = `
         Obrigado por se inscrever!
         `
-        
     }
+
+    subForm.email.addEventListener("blur", function validateEmail() {
+        
+    } )
+    
 }
 
 /*********************

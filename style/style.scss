@@ -31,16 +31,24 @@ header {
     display: flex;
     align-items: center;
     flex-direction: column;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 71%);
-    background-color: var(--color-dark-grey);
     color: var(--color-primary);
     font-weight: bold;
     letter-spacing: 0px;
-    padding-top: 50px;
+
+    .backgroundImg {
+        position: absolute;
+        z-index: -1;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 71%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 71%);
+        background-color: var(--color-dark-grey);
+        width: 100%;
+        height: 350px;
+    }
 
     .firstSentence {
         font-weight: 100;
         font-size: 21px;
+        padding-top: 50px;
     }
 
     h1 {
@@ -62,7 +70,7 @@ header {
         button {
             padding: 10px 30px;
             border: 0;
-            border-radius: 3px;
+            border-radius: 5px;
             box-shadow: 2px 2px 5px var(--color-dark);
             color: var(--color-light-grey);
             background-color: var(--color-primary);
@@ -276,7 +284,6 @@ header {
                         font-size: 16px;
                         padding: 5px 0;
                     }
-
                 }
             }
         }
@@ -289,6 +296,11 @@ header {
             margin: 45px;
             border: 1px solid var(--color-light-grey);
             border-radius: 4px;
+            
+        }
+        
+        .removeButton {
+            display: none;
         }
     }
 }
@@ -427,11 +439,17 @@ RESPONSIVO-MÁX 420PX
     .header {
         position: relative;
         align-items: flex-start;
-        padding-left: 12px;
-        padding-right: 12px;
+        
+        .firstSentence,
+        h1 {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
 
         .secondSentence {
             padding: 10px 0 35px 0;
+            padding-left: 12px;
+            padding-right: 12px;
         }
 
         .buttons {
@@ -443,9 +461,10 @@ RESPONSIVO-MÁX 420PX
             padding-right: 12px;
 
             button {
-                width: 170px;
+                width: 150px;
                 margin: 10px;
                 border: 1px solid var(--color-dark-grey);
+                padding: 10px 0px;
 
             }
         }
