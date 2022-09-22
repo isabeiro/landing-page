@@ -7,7 +7,6 @@
 const list = document.querySelector("#productsDescription")
 const buttonProduct = document.querySelector("#moreButton")
 
-
 let products = ""
 
 function turnInJson(response) {
@@ -42,15 +41,12 @@ function productList(response) {
                 </div>
             </div>
         `;
-        
     })
-    
-    
 
     const nextPage = response.nextPage
     
     buttonProduct.addEventListener("click", function() {
-
+        
         buttonProduct.classList.add("removeButton")
         buttonProduct.classList.remove("moreButton")
         
@@ -64,16 +60,13 @@ function productList(response) {
     return products;
 }
 
-
 function putItOnScreen() {
     list.innerHTML = products
-
 }
 
 function exibirErro() {
     console.log('Deu erro!')
 }
-
 
 fetch('https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1')
 .then(turnInJson)
@@ -85,17 +78,14 @@ fetch('https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?pag
  * FORM SUBSCRIPTION
  ********************/
 
-
 const subForm = document.querySelector("#subForm")
 const name = document.querySelector("#name")
 const email = document.querySelector("#email")
 const cpf = document.querySelector("#cpf")
 const checkboxM = document.querySelector("#checkboxM")
 const checkboxF = document.querySelector("#checkboxF")
+
 let submit = document.querySelector("#submit")
-
-
-
 let temErro = false
 
 checkboxM.addEventListener("click", function() {
@@ -113,14 +103,12 @@ checkboxF.addEventListener("click", function() {
     if (checkboxF.classList.contains('checked')) {
         checkboxF.classList.remove('checked')
 
-
     } else {
         checkboxM.classList.remove('checked')
         checkboxF.classList.add('checked')
         temErro = false
     }
 })
-
 
 subForm.onsubmit = function(event) {
     
@@ -135,17 +123,18 @@ subForm.onsubmit = function(event) {
         subForm.name.placeholder= ''
     }
 
-    if(!subForm.email.value){   
+    if(subForm.email.value.indexOf('@')==-1 || /*indexOf localiza um caractere dentro do campo informado, -1 significa q não foi localizado, logo só valida se for digitado*/
+        subForm.email.value.indexOf('.')==-1 ||
+        !subForm.email.value){   
         temErro = true
         subForm.email.classList.add('inputError')
         subForm.email.placeholder= ' Digite o e-mail corretamente'
-        
     } else {
         subForm.email.classList.remove('inputError')
         subForm.email.placeholder= ''
     }
 
-    if(subForm.cpf.value.length != 11 && !subForm.cpf.value){   
+    if(subForm.cpf.value.length != 11 || !subForm.cpf.value){   
         temErro = true
         subForm.cpf.classList.add('inputError')
         subForm.cpf.placeholder= ' Digite o CPF corretamente'
@@ -153,20 +142,13 @@ subForm.onsubmit = function(event) {
         subForm.cpf.classList.remove('inputError')
         subForm.cpf.placeholder= ''
     }
-
     
     if (!temErro){
         subForm.classList.add('thankyou')
-
         subForm.innerHTML = `
         Obrigado por se inscrever!
         `
     }
-
-    subForm.email.addEventListener("blur", function validateEmail() {
-        
-    } )
-    
 }
 
 /*********************
@@ -178,18 +160,13 @@ const friendName = document.querySelector("#friendName")
 const friendEmail = document.querySelector("#friendEmail")
 const secSubmit = document.querySelector("#secondSubmit")
 
-
 secondSubmit.addEventListener("click", function() {
 
     shareForm.onsubmit = function(e) {
-        console.log('ok')
-
     
         e.preventDefault()
 
         let temErro = false
-        
-    
     
         if (!shareForm.friendName.value) {
             temErro = true
@@ -200,7 +177,9 @@ secondSubmit.addEventListener("click", function() {
             shareForm.friendName.placeholder = ''
         }
     
-        if (!shareForm.friendEmail.value) {
+        if (shareForm.friendEmail.value.indexOf('@')==-1 ||
+            shareForm.friendEmail.value.indexOf('.')==-1 ||
+            !shareForm.friendEmail.value) {
             temErro = true
             shareForm.friendEmail.classList.add('inputError')
             shareForm.friendEmail.placeholder = ' Digite o e-mail'
@@ -208,7 +187,6 @@ secondSubmit.addEventListener("click", function() {
             shareForm.friendEmail.classList.remove('inputError')
             shareForm.friendEmail.placeholder = ''
         }
-    
     
         if (!temErro) {
             shareForm.classList.add('thankyou')

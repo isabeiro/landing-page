@@ -39,4 +39,5 @@
 <h1>Conclusões</h1>
 <br>
 <p>Pratiquei bastante HTML, CSS e JavaScript, utilizei SASS para otimizar a execução do código CSS. No JavaScript realizei a consulta de uma API para os produtos exibidos do site e também realizei a conferencia dos formulários antes do envio.</p>
-<p>Foi um desafio pessoal construir toda a estrutura do projeto sozinha, do design até as funcionalidades, e procurei manter os códigos limpos e bem organizados.</p> 
+<p>Foi um desafio pessoal construir toda a estrutura do projeto sozinha, do design até as funcionalidades, e procurei manter os códigos limpos e bem organizados, sendo o maior desafio a validação do campo de e-mail que resolvi fazer com o array indexOf para verificar se os caracteres @ e . foram digitados. Continuarei estudando para melhorar os processos de validação.</p>
+ 
