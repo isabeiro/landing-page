@@ -3,7 +3,7 @@
 
 ## Teste para vaga de emprego: Desenvolvedor Júnior
 <br>
-<p>O objetivo do desafio era reproduzir o design proposto e tornar os formulários e botão para carregamento d emais produtos funcionais</p>
+<p>O objetivo do desafio era reproduzir o design proposto e tornar os formulários e botão para carregamento de mais produtos funcionais</p>
 <br>
 
 <h1>Regras para o desafio:</h1>
